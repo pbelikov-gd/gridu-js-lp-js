@@ -1,0 +1,7 @@
+mixin slider(leftValue, rightValue, minValue, maxValue, stepValue)
+  div.form-element.form-range
+    div.slider(data-left-value=leftValue, data-right-value=rightValue, data-min-value=minValue, data-max-value=maxValue, data-step=stepValue)
+      span.ui-slider-handle.slider-left
+        div.value= leftValue
+      span.ui-slider-handle.slider-right
+        label.value= rightValue

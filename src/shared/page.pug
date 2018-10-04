@@ -1,0 +1,11 @@
+extends html
+
+block body
+  div.body__container
+    include nav/nav
+    block above
+    div.body__section-like
+      section
+        block content
+    include footer/footer
+  include modals

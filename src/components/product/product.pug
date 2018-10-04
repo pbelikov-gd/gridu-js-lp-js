@@ -1,0 +1,48 @@
+include ../button/button
+include ../rating/rating
+include ../modal/modal
+
+mixin product(options, isAdmin)
+  - productImage = options.image || "images/products/generic-product.png"
+  - actionText = options.action || 'Show more'
+  - actionType = options.actionType || 'buy'
+  - productName = options.name || 'Nonamed Product'
+  - ratingValue = options.rating || 0
+  - price = Number(options.price || 0).toFixed(2)
+  - amount = options.amount || 0
+  - desc = options.desc || 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  div.product
+    div.product-card
+      div.card-image
+        img.card-image__image-content(src=productImage)
+        +rating(ratingValue, 'card-rating')
+      div.card-body
+        div.about
+          h4.card-body__product-name=productName
+          div(class="card-desc")=desc
+          if isAdmin
+            div.card-admin
+              | You can
+              |
+              a.card-admin__control.add-button(href="#add") add 5 more
+              | . You can also
+              |
+              a.card-admin__control.edit-button(href="#edit") edit
+              |
+              | details or
+              |
+              a.card-admin__control.delete-button(href="#delete") delete
+              |
+              | them.
+        div.price-and-more
+          if amount > 0
+            div.card-price=price
+            div.card-show-more
+              +button({
+                label: actionText,
+                cssClasses: actionType === 'buy' ? 'buy-button' : ''
+              })
+          else
+            div.card-price=price
+              span.sold-out
+                | (sold out)

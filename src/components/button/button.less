@@ -1,0 +1,43 @@
+.button {
+  background: @gradient-primary-button;
+  border: 0;
+  padding: 5px 25px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 38px;
+  font-family: "PT Sans", sans-serif;
+  color: @white;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+
+  &:active {
+    background: @gradient-primary-button-active;
+    box-shadow: inset 2px 2px 4px 0 rgba(0,0,0,0.3);
+  }
+
+  &:disabled {
+    cursor: no-drop;
+    background: @gradient-primary-button-disabled;
+  }
+
+  &.button-big {
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 50px;
+  }
+
+  &.button-secondary {
+    background: @gradient-secondary-button;
+
+    &:active {
+      background: @gradient-secondary-button-active;
+    }
+
+    &:disabled {
+      background: @gradient-secondary-button-disabled;
+    }
+  }
+}

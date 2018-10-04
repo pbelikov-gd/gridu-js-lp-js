@@ -1,0 +1,34 @@
+extends ../../shared/html
+
+include ../../components/modal/modal
+include ../../components/input/input
+include ../../components/button/button
+
+block body
+  div.body__blur.login__blur
+  +modal('Login to “Demo Shop”', 'login-modal', 'login', {
+    name: 'login',
+    label: 'Submit',
+    class: '',
+    onclick: 'javascript:void(0)'
+  }, null)
+      form
+        +input({
+          type: 'text',
+          name: 'username',
+          value: '',
+          label: 'Your login:',
+          cssClasses: 'input-large login__input validate-on-focus',
+          required: true,
+          pattern: '^[A-Za-z]+$',
+          isLogin: true
+        }, true)
+        +input({
+          type: 'password',
+          name: 'password',
+          value: '',
+          label: 'Your password:',
+          cssClasses: 'input-large login__input validate-on-focus',
+          required: true,
+          isPassword: true
+        }, true)

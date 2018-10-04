@@ -1,0 +1,25 @@
+.manager__charts {
+  padding: 0 20px;
+
+  & > .chart {
+    width: 50%;
+    float: left;
+
+    &:first-child {
+      padding-right: 10px;
+    }
+  }
+}
+
+@media(max-width: 800px)  {
+  .manager__charts {
+    & > .chart {
+      width: 100%;
+      float: none;
+
+      &:first-child {
+        padding-right: 5px;
+      }
+    }
+  }
+}

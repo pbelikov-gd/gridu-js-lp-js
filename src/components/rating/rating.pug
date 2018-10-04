@@ -1,0 +1,10 @@
+mixin rating(value, ratingClass)
+  - var rated = Math.min(value, 5)
+  - var left = 5 - rated
+  div(class='rating ' + (ratingClass || ''))
+    while rated > 0
+      - rated--
+      img.rating__star(src="images/rating/star-active.svg")
+    while left > 0
+      - left--
+      img.rating__star(src="images/rating/star-inactive.svg")

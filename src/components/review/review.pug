@@ -1,0 +1,62 @@
+include ../button/button
+include ../input/input
+include ../textarea/textarea
+
+mixin review()
+  div.review
+    h2.review__header-add Add review
+    div.review__header
+      div.preview__title
+        div.preview__author-published
+          | By
+          span.preview__author-name Your name
+          | February 24, 2017
+        div.preview_rating
+          +rating(3)
+      div.preview__avatar
+        img(src="images/cat.jpg")
+      div.preview__text
+        div Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        blockquote follow the white rabbit
+    div.review__separator Edit your review
+    div.review__body
+      div.grid-cell.review__author-panel
+        label Enter your name:
+        div.review__author-name
+          +input({
+            cssClasses: 'input-novalidate'
+          })
+        label Choose your avatar:
+        div.review__author-avatar
+          span.review__author-avatar-image Image not selected
+          i.mdi.mdi-upload
+      div.grid-cell.review__text
+        div.review__text-area
+          div.text-area__label.clear
+            label.pull-left
+              | Write your review:
+            div.pull-right Rate product:
+              +rating(0, 'item-inline-block')
+          +textarea('Lorem ipsum')
+        div.review__text_controls.clear
+          +button({
+            label: 'Bold',
+            cssClasses: 'pull-left'
+          })
+          +button({
+            label: 'Emphasize',
+            cssClasses: 'pull-left'
+          })
+          +button({
+            label: 'Quote',
+            cssClasses: 'pull-left'
+          })
+          +button({
+            label: 'Add review',
+            cssClasses: 'pull-right',
+            disabled: true
+          })
+          +button({
+            label: 'Cancel',
+            cssClasses: 'pull-right'
+          })

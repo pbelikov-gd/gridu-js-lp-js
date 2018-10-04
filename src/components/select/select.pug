@@ -1,0 +1,13 @@
+mixin select(pValue, pItems, options)
+  - options = options || {}
+  - cssClasses = options.cssClasses || '' + (options.isWhite ? ' select-alternative' : '')
+  div.form-element
+    div.form-element__select-box
+      select(class=cssClasses)
+        each item in pItems
+          option(value=item.value, selected=item.value == pValue ? true : false)= item.label
+      label.lbl
+        if options.isWhite
+          img.select-box__arrow(src="images/controls/down-on-white.svg")
+        else
+          img.select-box__arrow(src="images/controls/down-on-dark.svg")

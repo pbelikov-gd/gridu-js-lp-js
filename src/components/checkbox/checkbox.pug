@@ -1,0 +1,7 @@
+mixin checkbox(isChecked, options)
+  - options = options || {}
+  div.form-element.form-element__checkbox(class=options.cssClasses)
+      input(type="checkbox", class="hidden", name=options.name, id=options.id, checked=isChecked)
+      label.lbl(for=options.id)
+      if options.label
+          label.label-text(for=options.id)= options.label

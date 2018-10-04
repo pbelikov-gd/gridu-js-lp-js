@@ -1,0 +1,46 @@
+.login-modal {
+  &.modal-container {
+    background: transparent;
+  }
+}
+
+#login {
+  width: 570px;
+
+  > .modal-title {
+    text-align: center;
+  }
+
+  > .modal-body {
+    padding: 20px 40px;
+
+    > .modal-footer {
+      padding-right: 20px;
+      padding-bottom: 10px;
+    }
+
+    .form-element {
+      > label {
+        font-size: 18px;
+        padding: 0 3px 3px;
+        display: block;
+      }
+
+      & + .form-element {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+@media(max-width: 800px) {
+  #login {
+    width: 460px;
+  }
+}
+
+.body__blur {
+  &.login__blur {
+    display: block;
+  }
+}

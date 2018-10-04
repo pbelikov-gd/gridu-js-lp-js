@@ -1,0 +1,50 @@
+.form-element.form-radio {
+  font-size: .8em;
+
+  input[type="radio"] {
+    position: absolute;
+
+    & + .lbl {
+      position: relative;
+      display: inline-block;
+      height: 26px;
+      width: 26px;
+      background: @white;
+      border-radius: 100px;
+      cursor: pointer;
+      border: 1px solid @form-item;
+
+      &:after {
+        position: absolute;
+        content: '';
+        background: @white;
+        width: 20px;
+        height: 20px;
+        border-radius: 100px;
+        top: 2px;
+        left: 2px;
+        transition: background 0.3s ease;
+      }
+    }
+
+    &:checked + .lbl {
+      &:after {
+        background: @form-item;
+      }
+    }
+
+    & ~ .label-text {
+      display: inline-block;
+      position: absolute;
+      line-height: 27px;
+      padding-left: 7px;
+      font-weight: normal;
+      color: @black;
+      cursor: pointer;
+    }
+
+    &:checked ~ .label-text {
+      color: @checked;
+    }
+  }
+}

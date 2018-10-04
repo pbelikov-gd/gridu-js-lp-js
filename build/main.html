@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/js2angular.css">
+<link rel="stylesheet" href="../node_modules/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="../vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700|PT+Sans:400,700">
+<title>Js 2 Angular</title>
+
+<body>
+    <div class="body__blur"></div>
+    <div class="body__container">
+        <nav class="nav-main">
+            <div class="nav-main__content">
+                <div class="cart"><a href="#"><img class="cart__image" src="images/logo/cart.svg"></a></div>
+                <div class="logout"><span class="logout__item logout__hello">Hello,</span><span class="logout__item logout__username">PavelBelikov</span><a class="logout__link" href="#"><img class="logout__image" src="images/logout.svg"></a></div>
+            </div>
+        </nav>
+        <div class="body__section-like">
+            <section>
+                <div class="filters">
+                    <!-- We'll make it in pure CSS--><input class="button-checkbox" type="checkbox" id="filter-switcher"><label class="button" for="filter-switcher"><span>Filter options</span></label>
+                    <div class="filter-options">
+                        <div class="filter-content">
+                            <div class="grid-cell availability-box"><label>Availability:</label>
+                                <div class="form-element form-element__checkbox"><input class="hidden" type="checkbox" name="availability" id="availabilityCheck"><label class="lbl" for="availabilityCheck"></label><label class="label-text" for="availabilityCheck">Available only</label></div>
+                            </div>
+                            <div class="grid-cell gender-box"><label>Gender:</label>
+                                <div class="form-element form-radio"><input class="hidden" type="radio" name="gender" id="gender-male"><label class="lbl" for="gender-male"></label><label class="label-text" for="gender-male">Man</label></div>
+                                <div class="form-element form-radio"><input class="hidden" type="radio" name="gender" id="gender-female" checked><label class="lbl" for="gender-female"></label><label class="label-text" for="gender-female">Woman</label></div>
+                                <div class="form-element form-radio"><input class="hidden" type="radio" name="gender" id="gender-unisex"><label class="lbl" for="gender-unisex"></label><label class="label-text" for="gender-unisex">Unisex</label></div>
+                            </div>
+                            <div class="grid-cell category-box"><label>Category:</label>
+                                <div class="form-element">
+                                    <div class="form-element__select-box"><select><option value="jeans">Jeans</option><option value="shorts" selected>Shorts</option><option value="t-shirts">T-shirts</option></select><label class="lbl"><img class="select-box__arrow" src="images/controls/down-on-dark.svg"></label></div>
+                                </div>
+                            </div>
+                            <div class="grid-cell rating-box"><label>Rating:</label>
+                                <div class="form-element form-range">
+                                    <div class="slider" data-left-value="2" data-right-value="4" data-min-value="1" data-max-value="5" data-step="1"><span class="ui-slider-handle slider-left"><div class="value">2</div></span><span class="ui-slider-handle slider-right"><label class="value">4</label></span></div>
+                                </div>
+                            </div>
+                            <div class="grid-cell price-box"><label>Price:</label>
+                                <div class="form-element form-range">
+                                    <div class="slider" data-left-value="517" data-right-value="684" data-min-value="1" data-max-value="1000" data-step="1"><span class="ui-slider-handle slider-left"><div class="value">517</div></span><span class="ui-slider-handle slider-right"><label class="value">684</label></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-element"><input class="input-novalidate input__with-icon" type="text" value="" name="search" placeholder="Filter by text ..."><span class="input-icon search-icon"><img class="input__search-icon icon-image" src="images/controls/search.svg"></span></div>
+                </div>
+                <div class="products">
+                    <div class="product">
+                        <div class="product-card">
+                            <div class="card-image"><img class="card-image__image-content" src="images/products/more-products.jpg" />
+                                <div class="rating card-rating"><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-inactive.svg"
+                                    /><img class="rating__star" src="images/rating/star-inactive.svg" /></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="about">
+                                    <h4 class="card-body__product-name">Active coat</h4>
+                                    <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                        mollit anim id est laborum.</div>
+                                </div>
+                                <div class="price-and-more">
+                                    <div class="card-price">7800.00</div>
+                                    <div class="card-show-more"><button class="button ">Show more</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-card">
+                            <div class="card-image"><img class="card-image__image-content" src="images/products/generic-product.png" />
+                                <div class="rating card-rating"><img class="rating__star" src="images/rating/star-inactive.svg" /><img class="rating__star" src="images/rating/star-inactive.svg" /><img class="rating__star" src="images/rating/star-inactive.svg" /><img class="rating__star"
+                                        src="images/rating/star-inactive.svg" /><img class="rating__star" src="images/rating/star-inactive.svg" /></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="about">
+                                    <h4 class="card-body__product-name">Super-expensive Active coat with super-very-very-very-very-very-very-very-very-very-very long name</h4>
+                                    <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                        mollit anim id est laborum.</div>
+                                </div>
+                                <div class="price-and-more">
+                                    <div class="card-price">78000.00</div>
+                                    <div class="card-show-more"><button class="button ">Show more</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-card">
+                            <div class="card-image"><img class="card-image__image-content" src="images/products/generic-product.png" />
+                                <div class="rating card-rating"><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg"
+                                    /><img class="rating__star" src="images/rating/star-active.svg" /></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="about">
+                                    <h4 class="card-body__product-name">Not so active coat 1</h4>
+                                    <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                        mollit anim id est laborum.</div>
+                                </div>
+                                <div class="price-and-more">
+                                    <div class="card-price">9.95</div>
+                                    <div class="card-show-more"><button class="button ">Show more</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-card">
+                            <div class="card-image"><img class="card-image__image-content" src="images/products/other-product.jpg" />
+                                <div class="rating card-rating"><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-inactive.svg" /><img class="rating__star"
+                                        src="images/rating/star-inactive.svg" /><img class="rating__star" src="images/rating/star-inactive.svg" /></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="about">
+                                    <h4 class="card-body__product-name">T-shirt</h4>
+                                    <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                        mollit anim id est laborum.</div>
+                                </div>
+                                <div class="price-and-more">
+                                    <div class="card-price">1.95</div>
+                                    <div class="card-show-more"><button class="button ">Show more</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-card">
+                            <div class="card-image"><img class="card-image__image-content" src="images/products/generic-product.png" />
+                                <div class="rating card-rating"><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg"
+                                    /><img class="rating__star" src="images/rating/star-active.svg" /></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="about">
+                                    <h4 class="card-body__product-name">Sold-out T-shirt</h4>
+                                    <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                        mollit anim id est laborum.</div>
+                                </div>
+                                <div class="price-and-more">
+                                    <div class="card-price">2.95<span class="sold-out">(sold out)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="footer-main">Copyright "<a class="footer-main__app-name" href="#">Demo Shop</a>",&nbsp;<span>2018</span></footer>
+    </div>
+    <div class="modal-container buy-modal not-displayed">
+        <div class="modal">
+            <div class="modal-title">
+                <h3 class="modal-title__content">Thank you!</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <div class="disclaimer">You successfully purchased this item.</div>
+                </div>
+                <div class="modal-footer"><button class="button button-big " onclick="helper.closeModal()">Continue shopping</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-container delete-modal not-displayed">
+        <div class="modal">
+            <div class="modal-title">
+                <h3 class="modal-title__content">Are you sure?</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <div class="disclaimer">You are trying to delete this product.</div>
+                    <div class="disclaimer">Are you sure you want this?</div>
+                </div>
+                <div class="modal-footer"><button class="button button-big button-secondary" onclick="helper.closeModal()">Cancel</button><button class="button button-big " onclick="helper.closeModal()">Submit</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-container edit-modal not-displayed">
+        <div class="modal">
+            <div class="modal-title">
+                <h3 class="modal-title__content">Edit &quot;Lorme shirt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod&quot;</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <div class="admin-panel-content">
+                        <div class="column">
+                            <div class="grid-cell name-box"><label>Name:</label>
+                                <div class="form-element"><input class="input-novalidate" type="text" placeholder="Please enter name ..."></div>
+                            </div>
+                            <div class="grid-cell category-box"><label>Category:</label>
+                                <div class="form-element">
+                                    <div class="form-element__select-box"><select class=" select-alternative"><option value="jeans">Jeans</option><option value="shorts" selected>Shorts</option><option value="t-shirts">T-shirts</option></select><label class="lbl"><img class="select-box__arrow" src="images/controls/down-on-white.svg"></label></div>
+                                </div>
+                            </div>
+                            <div class="grid-cell gender-box"><label>Gender:</label>
+                                <div class="form-element form-radio"><input class="hidden" type="radio" name="gender" id="gender-male"><label class="lbl" for="gender-male"></label><label class="label-text" for="gender-male">Man</label></div>
+                                <div class="form-element form-radio"><input class="hidden" type="radio" name="gender" id="gender-female" checked><label class="lbl" for="gender-female"></label><label class="label-text" for="gender-female">Woman</label></div>
+                                <div class="form-element form-radio"><input class="hidden" type="radio" name="gender" id="gender-unisex"><label class="lbl" for="gender-unisex"></label><label class="label-text" for="gender-unisex">Unisex</label></div>
+                            </div>
+                            <div class="grid-cell desc-box"><label>Description:</label>
+                                <div class="form-element"><textarea class="form-element__textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea></div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="grid-cell image-link-box"><label>Link to image:</label>
+                                <div class="form-element"><input class="validate-on-focus ignore-valid-not-on-focus" type="text" pattern="^http(s){0,1}://.+" placeholder="Please enter link to image ..."></div>
+                            </div>
+                            <div class="grid-cell image-box"><img src="images/products/generic-product.png"></div>
+                            <div class="grid-cell price-box"><label>Price:</label>
+                                <div class="form-element"><input class="input-novalidate" type="number" placeholder="Please enter price ..."></div>
+                            </div>
+                            <div class="grid-cell rating-box"><label>Rating:</label>
+                                <div class="form-element">
+                                    <div class="form-element__select-box"><select class=" select-alternative"><option value="5" selected>5</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="134">134</option></select><label class="lbl"><img class="select-box__arrow" src="images/controls/down-on-white.svg"></label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="button button-big button-secondary" onclick="helper.closeModal()">Cancel</button><button class="button button-big " onclick="helper.closeModal()">Submit</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="../vendor/jquery-3.2.1.min.js"></script>
+    <script src="../vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="js/bundle.js"></script>
+</body>
+
+</html>

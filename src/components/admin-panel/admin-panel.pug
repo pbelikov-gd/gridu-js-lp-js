@@ -1,0 +1,76 @@
+include ../checkbox/checkbox
+include ../radio/radio
+include ../select/select
+include ../input/input
+include ../textarea/textarea
+
+div.admin-panel-content
+  div.column
+    div.grid-cell.name-box
+      label Name:
+      +input({
+        type: 'text',
+        placeholder: 'Please enter name ...',
+        required: false,
+        cssClasses: 'input-novalidate'
+      })
+    div.grid-cell.category-box
+      label Category:
+      +select('shorts', [
+        {value: 'jeans', label: 'Jeans'},
+        {value: 'shorts', label: 'Shorts'},
+        {value: 't-shirts', label: 'T-shirts'}
+      ], {
+        isWhite: true
+      })
+    div.grid-cell.gender-box
+      label Gender:
+      +radio(false, {
+        label: 'Man',
+        name: 'gender',
+        id: 'gender-male'
+      })
+      +radio(true, {
+        label: 'Woman',
+        name: 'gender',
+        id: 'gender-female'
+      })
+      +radio(false, {
+        label: 'Unisex',
+        name: 'gender',
+        id: 'gender-unisex'
+      })
+    div.grid-cell.desc-box
+      label Description:
+      +textarea('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')
+  div.column
+    div.grid-cell.image-link-box
+      label Link to image:
+      +input({
+        type: 'text',
+        placeholder: 'Please enter link to image ...',
+        required: false,
+        pattern: '^http(s){0,1}:\/\/.+',
+        cssClasses: 'validate-on-focus ignore-valid-not-on-focus'
+      })
+    div.grid-cell.image-box
+      img(src="images/products/generic-product.png")
+    div.grid-cell.price-box
+      label Price:
+      +input({
+        type: 'number',
+        placeholder: 'Please enter price ...',
+        required: false,
+        cssClasses: 'input-novalidate'
+      })
+    div.grid-cell.rating-box
+      label Rating:
+      +select('5', [
+        {value: '5', label: '5'},
+        {value: '4', label: '4'},
+        {value: '3', label: '3'},
+        {value: '2', label: '2'},
+        {value: '134', label: '134'}
+      ], {
+        isWhite: true
+      })

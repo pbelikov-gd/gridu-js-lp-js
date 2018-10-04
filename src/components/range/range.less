@@ -1,0 +1,40 @@
+.form-element.form-range {
+  padding-top: 15px;
+  padding-right: 20px;
+
+  & > .slider {
+    background: @form-range-line;
+    position: relative;
+    height: 2px;
+
+    & > div.ui-slider-range {
+      left: 23.4%;
+      background: @form-item;
+      height: 2px;
+      position: absolute;
+    }
+
+    & > .ui-slider-handle {
+      height: 20px;
+      width: 20px;
+      display: block;
+      position: absolute;
+      background: @form-item;
+      border-radius: 100px;
+      outline: none;
+      top: -8px;
+      z-index: 2;
+      cursor: pointer;
+
+      & > .value {
+        position: absolute;
+        top: 23px;
+        font-size: .8em;
+        left: -10px;
+        text-align: center;
+        width: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+}

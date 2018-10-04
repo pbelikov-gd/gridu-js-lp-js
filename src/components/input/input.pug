@@ -1,0 +1,26 @@
+mixin input(options, icon)
+  - options = options || {}
+  - options.cssClasses = (options.cssClasses || '') + (icon ? ' input__with-icon' : '')
+  div.form-element
+    if options.label
+      label= options.label
+    input(
+      id=options.id
+      type=(options.type || 'text')
+      value=options.value
+      name=options.name
+      class=options.cssClasses
+      required=options.required
+      pattern=options.pattern
+      placeholder=options.placeholder
+      )
+    if icon
+      if options.isLogin
+        span.input-icon.login-icon
+          include login/login-icon
+      if options.isPassword
+        span.input-icon.password-icon
+          include password/password-icon
+      if options.isSearch
+        span.input-icon.search-icon
+          include search/search-icon

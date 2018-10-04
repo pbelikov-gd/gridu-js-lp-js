@@ -1,0 +1,145 @@
+.form-element {
+  input[type="text"], input[type="password"], input[type="number"] {
+    box-sizing: border-box;
+    display: block;
+    border: 2px solid @form-default;
+    outline: @form-default;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px 10px;
+    line-height: 23px;
+    font-size: 14px;
+    height: 35px;
+    background-color: @white;
+    font-family: "PT Sans", sans-serif;
+
+    &.input-large {
+      height: 60px;
+      width: 100%;
+      line-height: 32px;
+      font-size: 24px;
+      padding: 10px 45px 10px 15px;
+
+      &.input__with-icon {
+        padding-right: 55px;
+
+        & + span.input-icon {
+          right: 30px;
+          bottom: 2px;
+
+          &.login-icon {
+            .icon-image {
+              height: 50px;
+              width: 50px;
+            }
+          }
+
+          &.password-icon {
+            bottom: 7px;
+            right: 36px;
+
+            .icon-image {
+              height: 40px;
+              width: 40px;
+            }
+          }
+
+          .search-icon {
+            svg {
+              enable-background: new 0 0 24 24;
+            }
+          }
+        }
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      font-style: italic;
+      color: @placeholder;
+    }
+
+    &::-moz-placeholder {
+      font-style: italic;
+      color: @placeholder;
+    }
+    &:-ms-input-placeholder {
+      font-style: italic;
+      color: @placeholder;
+    }
+
+    &.input__with-icon {
+      padding-right: 29px;
+
+      & + span.input-icon {
+        position: absolute;
+        right: 14px;
+        bottom: 3px;
+        color: @form-default-icon;
+        fill: @form-default-icon;
+
+        .icon-image {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+
+    &:focus {
+      border-color: @form-focus;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-focus-icon;
+        fill: @form-focus-icon;
+      }
+    }
+
+    &:focus:invalid {
+      border-color: @form-required;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-required;
+        fill: @form-required;
+      }
+    }
+
+    &:valid:not(.input-novalidate):not(.validate-on-focus) {
+      border-color: @form-valid;
+      outline: @form-valid;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-valid;
+        fill: @form-valid;
+      }
+    }
+
+    &.validate-on-focus:valid:not(.input-novalidate) {
+      border-color: @form-focus;
+      outline: @form-focus;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-focus;
+        fill: @form-focus;
+      }
+    }
+
+    &.validate-on-focus:focus:valid:not(.input-novalidate) {
+      border-color: @form-valid;
+      outline: @form-valid;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-valid;
+        fill: @form-valid;
+      }
+    }
+
+    &.ignore-valid-not-on-focus:valid:not(:focus) {
+      border-color: @form-default;
+      outline: @form-default;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-default;
+        fill: @form-default;
+      }
+    }
+  }
+}

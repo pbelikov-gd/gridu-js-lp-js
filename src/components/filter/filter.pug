@@ -1,0 +1,63 @@
+include ../button/button
+include ../input/input
+include ../checkbox/checkbox
+include ../radio/radio
+include ../select/select
+include ../range/range
+
+div(class="filters")
+  // We'll make it in pure CSS
+  input(type="checkbox", class="button-checkbox")#filter-switcher
+  label.button(for="filter-switcher")
+    span Filter options
+  div.filter-options
+    div.filter-content
+      div.grid-cell.availability-box
+        label Availability:
+        +checkbox(false, {
+          label: 'Available only',
+          name: 'availability',
+          id: 'availabilityCheck'
+        })
+      div.grid-cell.gender-box
+        label Gender:
+        +radio(false, {
+          label: 'Man',
+          name: 'gender',
+          id: 'gender-male'
+        })
+        +radio(true, {
+          label: 'Woman',
+          name: 'gender',
+          id: 'gender-female'
+        })
+        +radio(false, {
+          label: 'Unisex',
+          name: 'gender',
+          id: 'gender-unisex'
+        })
+      div.grid-cell.category-box
+        label Category:
+        +select('shorts', [
+          {value: 'jeans', label: 'Jeans'},
+          {value: 'shorts', label: 'Shorts'},
+          {value: 't-shirts', label: 'T-shirts'}
+        ])
+      div.grid-cell.rating-box
+        label Rating:
+        +slider(2, 4, 1, 5, 1)
+      div.grid-cell.price-box
+        label Price:
+        +slider(517, 684, 1, 1000, 1)
+  +input({
+    type: 'text',
+    name: 'search',
+    value: '',
+    label: null,
+    required: false,
+    placeholder: 'Filter by text ...',
+    cssClasses: 'input-novalidate',
+    required: false,
+    isSearch: true
+  }, true)
+  

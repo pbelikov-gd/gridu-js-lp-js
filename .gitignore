@@ -1,0 +1,5 @@
+node_modules/
+.settings/
+.idea/
+.idea/workspace.xml
+.DS_Store

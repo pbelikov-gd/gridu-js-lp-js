@@ -1,0 +1,12 @@
+include ../components/modal/modal
+
++modal('Thank you!', 'buy-modal not-displayed', null, {label: 'Continue shopping'})
+  div.disclaimer
+    | You successfully purchased this item.
++modal('Are you sure?', 'delete-modal not-displayed', null, {label: 'Cancel', class: 'button-secondary'}, {label: 'Submit'})
+  div.disclaimer
+    | You are trying to delete this product.
+  div.disclaimer
+    | Are you sure you want this?
++modal('Edit "Lorme shirt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"', 'edit-modal not-displayed', null, {label: 'Cancel', class: 'button-secondary'}, {label: 'Submit'})
+  include ../components/admin-panel/admin-panel

@@ -1,0 +1,7 @@
+mixin radio(isChecked, options)
+    -options = options || {}
+    div.form-element.form-radio(class=options.cssClasses)
+        input(type="radio", class="hidden", name=options.name, id=options.id, checked=isChecked)
+        label.lbl(for=options.id)
+        if options.label
+            label.label-text(for=options.id)= options.label

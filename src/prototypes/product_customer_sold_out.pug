@@ -1,0 +1,16 @@
+extends ../shared/page
+include ../components/product/product
+include ../components/product/nav/product-nav
+
+block content
+  +productNavigation('Man / Active wear')
+  div.single-product
+    +product({
+      action: 'Buy',
+      actionType: 'buy',
+      image: null,
+      amount: 0,
+      rating: 3,
+      name: 'Lorme shirt',
+      price: 9000
+    }, true)

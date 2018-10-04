@@ -1,0 +1,28 @@
+include ../button/button
+
+mixin modal(title, modalClass, modalId, btnOK, btnCancel)
+  - onOKClick = btnOK && btnOK.onclick || 'helper.closeModal()'
+  - onCancelClick = btnCancel && btnCancel.onclick || 'helper.closeModal()'
+  div(class='modal-container ' + modalClass)
+      div(class='modal', id=modalId)
+          div(class="modal-title")
+              h3.modal-title__content= title
+          div(class="modal-body")
+            div(class="modal-content")
+              block
+            if btnOK || btnCancel
+              div(class="modal-footer")
+                if btnOK
+                  +button({
+                    label: btnOK.label,
+                    name: btnOK.name,
+                    cssClasses: 'button-big ' + (btnOK.class || ''),
+                    onClick: onOKClick
+                  })
+                if btnCancel
+                  +button({
+                    label: btnCancel.label,
+                    name: btnCancel.name,
+                    cssClasses: 'button-big ' + (btnCancel.class || ''),
+                    onClick: onCancelClick
+                  })

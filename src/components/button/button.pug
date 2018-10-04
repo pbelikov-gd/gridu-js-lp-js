@@ -1,0 +1,3 @@
+mixin button(options)
+  - options = options || {}
+  button(name=options.name, class='button ' + (options.cssClasses || ''), onclick=options.onClick, disabled=options.disabled)= options.label

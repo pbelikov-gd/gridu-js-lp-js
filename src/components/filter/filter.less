@@ -1,0 +1,187 @@
+.filters {
+  text-align: right;
+  padding: 5px 10px 10px;
+
+  > .form-element {
+    display: inline-block;
+    padding-right: 5px;
+
+    > input {
+      display: inline-block;
+    }
+  }
+
+  .filter-options {
+    visibility: hidden;
+    displaY: none;
+    text-align: left;
+    position: absolute;
+    z-index: 1;
+    padding: 0px;
+    background: @white;
+    border: 1px solid @gray-lt;
+    border-radius: 10px;
+    margin-top: 11px;
+    right: 25px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -11px;
+      left: 460px;
+      border-style: solid;
+      border-width: 0 12px 12px;
+      border-color: @white transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+    }
+
+    &:before
+    {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 460px;
+      border-style: solid;
+      border-width: 0 12px 12px;
+      border-color: @gray-lt transparent;
+      display: block;
+      width: 0;
+      z-index: 0;
+    }
+  }
+
+  // "Button" to hide/show filter options
+  input[type="checkbox"].button-checkbox {
+    display: none;
+
+    & + .button {
+      display: inline-block;
+    }
+
+    &:checked {
+      & + .button {
+        background: @gradient-primary-button-active;
+        box-shadow: inset 2px 2px 4px 0 rgba(0,0,0,0.3);
+      }
+
+      & ~ .filter-options {
+        visibility: visible;
+        display: block;
+      }
+    }
+  }
+}
+
+.filter-content {
+  display: grid;
+  grid-template-columns: 180px 150px 150px 150px 150px;
+  grid-template-rows: 75px 75px;
+  padding: 5px;
+
+  .grid-cell {
+    & > label:first-child {
+      font-size: .8em;
+      font-weight: bold;
+    }
+  }
+
+  & > .availability-box {
+    grid-column: 1 / 1;
+    grid-row: 1;
+
+    & > .form-element {
+      margin-top: 7px;
+    }
+  }
+
+  & > .gender-box {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+
+    & > label {
+      display: block;
+    }
+
+    & > .form-element {
+      display: inline-block;
+      margin-top: 10px;
+
+      &:nth-child(2) {
+        width: 29%;
+      }
+
+      &:nth-child(3) {
+        width: 36%;
+      }
+
+      &:last-child {
+        width: 33%;
+      }
+    }
+  }
+
+  & > .category-box {
+    grid-column: 4 / span 2;
+    grid-row: 1;
+  }
+
+  & > .rating-box {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  & > .price-box {
+    grid-column: 3 / span 3;
+    grid-row: 2;
+  }
+
+  & > .rating-box,
+  & > .price-box {
+    border-top: 1px solid @gray-lt;
+  }
+}
+
+@media(max-width: 800px) {
+  .filters {
+    .filter-options {
+      &:before,
+      &:after {
+        left: 120px;
+      }
+    }
+
+    .filter-content {
+      grid-template-columns: 400px;
+      grid-template-rows: 85px 85px 85px 85px 85px;
+
+      & > .grid-cell {
+        grid-column: 1 / 1;
+        &:not(:first-child) {
+          border-top: 1px solid @gray-lt;
+        }
+      }
+
+      & > .availability-box {
+        grid-row: 1;
+      }
+
+      & > .gender-box {
+        grid-row: 2;
+      }
+
+      & > .category-box {
+        grid-row: 3;
+      }
+
+      & > .rating-box {
+        grid-row: 4;
+      }
+
+      & > .price-box {
+        grid-row: 5;
+      }
+    }
+  }
+}
