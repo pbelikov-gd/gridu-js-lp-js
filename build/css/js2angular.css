@@ -675,7 +675,7 @@ div.not-displayed.modal-container {
 }
 
 .admin-panel-content .column > .gender-box > .form-element:nth-child(3) {
-  width: 36%;
+  width: 34%;
 }
 
 .admin-panel-content .column > .gender-box > .form-element:last-child {
@@ -808,7 +808,7 @@ div.not-displayed.modal-container {
 }
 
 .filter-content > .gender-box > .form-element:nth-child(3) {
-  width: 36%;
+  width: 34%;
 }
 
 .filter-content > .gender-box > .form-element:last-child {

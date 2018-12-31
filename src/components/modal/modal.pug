@@ -1,8 +1,8 @@
 include ../button/button
 
 mixin modal(title, modalClass, modalId, btnOK, btnCancel)
-  - onOKClick = btnOK && btnOK.onclick || 'helper.closeModal()'
-  - onCancelClick = btnCancel && btnCancel.onclick || 'helper.closeModal()'
+  - onOKClick = btnOK && btnOK.onclick || 'Helpers.closeModal()'
+  - onCancelClick = btnCancel && btnCancel.onclick || 'Helpers.closeModal()'
   div(class='modal-container ' + modalClass)
       div(class='modal', id=modalId)
           div(class="modal-title")
