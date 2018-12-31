@@ -27,26 +27,22 @@
                     <div class="product">
                         <div class="product-card">
                             <div class="card-image"><img class="card-image__image-content" src="images/products/generic-product.png" />
-                                <div class="rating card-rating"><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-inactive.svg"
-                                    /><img class="rating__star" src="images/rating/star-inactive.svg" /></div>
+                                <div class="rating card-rating"><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-active.svg" /><img class="rating__star" src="images/rating/star-inactive.svg" /><img class="rating__star" src="images/rating/star-inactive.svg" /></div>
                             </div>
                             <div class="card-body">
                                 <div class="about">
                                     <h4 class="card-body__product-name">Lorme shirt</h4>
-                                    <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                        mollit anim id est laborum.</div>
+                                    <div class="card-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                                     <div class="card-admin">You can
                                         <a class="card-admin__control add-button" href="#add">add 5 more</a>. You can also
-                                        <a class="card-admin__control edit-button" href="#edit">edit</a> details or
-                                        <a class="card-admin__control delete-button" href="#delete">delete</a> them.
-                                    </div>
+                                        <a class="card-admin__control edit-button" href="#edit" onclick="Helpers.edit();">edit</a>
+                                        details or
+                                        <a class="card-admin__control delete-button" href="#delete" onclick="Helpers.delete();">delete</a>
+                                        them.</div>
                                 </div>
                                 <div class="price-and-more">
                                     <div class="card-price">9000.00</div>
-                                    <div class="card-show-more"><button class="button buy-button">Buy</button></div>
+                                    <div class="card-show-more"><button class="button buy-button" onclick="Helpers.buy();">Buy</button></div>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +61,7 @@
                 <div class="modal-content">
                     <div class="disclaimer">You successfully purchased this item.</div>
                 </div>
-                <div class="modal-footer"><button class="button button-big " onclick="helper.closeModal()">Continue shopping</button></div>
+                <div class="modal-footer"><button class="button button-big " onclick="Helpers.closeModal()">Continue shopping</button></div>
             </div>
         </div>
     </div>
@@ -79,7 +75,7 @@
                     <div class="disclaimer">You are trying to delete this product.</div>
                     <div class="disclaimer">Are you sure you want this?</div>
                 </div>
-                <div class="modal-footer"><button class="button button-big button-secondary" onclick="helper.closeModal()">Cancel</button><button class="button button-big " onclick="helper.closeModal()">Submit</button></div>
+                <div class="modal-footer"><button class="button button-big button-secondary" onclick="Helpers.closeModal()">Cancel</button><button class="button button-big " onclick="Helpers.closeModal()">Submit</button></div>
             </div>
         </div>
     </div>
@@ -97,7 +93,11 @@
                             </div>
                             <div class="grid-cell category-box"><label>Category:</label>
                                 <div class="form-element">
-                                    <div class="form-element__select-box"><select class=" select-alternative"><option value="jeans">Jeans</option><option value="shorts" selected>Shorts</option><option value="t-shirts">T-shirts</option></select><label class="lbl"><img class="select-box__arrow" src="images/controls/down-on-white.svg"></label></div>
+                                    <div class="form-element__select-box"><select class=" select-alternative">
+                                            <option value="jeans">Jeans</option>
+                                            <option value="shorts" selected>Shorts</option>
+                                            <option value="t-shirts">T-shirts</option>
+                                        </select><label class="lbl"><img class="select-box__arrow" src="images/controls/down-on-white.svg"></label></div>
                                 </div>
                             </div>
                             <div class="grid-cell gender-box"><label>Gender:</label>
@@ -119,13 +119,19 @@
                             </div>
                             <div class="grid-cell rating-box"><label>Rating:</label>
                                 <div class="form-element">
-                                    <div class="form-element__select-box"><select class=" select-alternative"><option value="5" selected>5</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="134">134</option></select><label class="lbl"><img class="select-box__arrow" src="images/controls/down-on-white.svg"></label></div>
+                                    <div class="form-element__select-box"><select class=" select-alternative">
+                                            <option value="5" selected>5</option>
+                                            <option value="4">4</option>
+                                            <option value="3">3</option>
+                                            <option value="2">2</option>
+                                            <option value="134">134</option>
+                                        </select><label class="lbl"><img class="select-box__arrow" src="images/controls/down-on-white.svg"></label></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer"><button class="button button-big button-secondary" onclick="helper.closeModal()">Cancel</button><button class="button button-big " onclick="helper.closeModal()">Submit</button></div>
+                <div class="modal-footer"><button class="button button-big button-secondary" onclick="Helpers.closeModal()">Cancel</button><button class="button button-big " onclick="Helpers.closeModal()">Submit</button></div>
             </div>
         </div>
     </div>

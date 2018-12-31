@@ -27,11 +27,11 @@ mixin product(options, isAdmin)
               a.card-admin__control.add-button(href="#add") add 5 more
               | . You can also
               |
-              a.card-admin__control.edit-button(href="#edit") edit
+              a.card-admin__control.edit-button(href="#edit", onclick="Helpers.edit();") edit
               |
               | details or
               |
-              a.card-admin__control.delete-button(href="#delete") delete
+              a.card-admin__control.delete-button(href="#delete", onclick="Helpers.delete();") delete
               |
               | them.
         div.price-and-more
@@ -40,7 +40,8 @@ mixin product(options, isAdmin)
             div.card-show-more
               +button({
                 label: actionText,
-                cssClasses: actionType === 'buy' ? 'buy-button' : ''
+                cssClasses: actionType === 'buy' ? 'buy-button' : '',
+                onClick: actionType === 'buy' ? 'Helpers.buy();' : ''
               })
           else
             div.card-price=price

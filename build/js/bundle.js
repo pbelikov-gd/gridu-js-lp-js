@@ -1,79 +1,48 @@
-(function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 require('./modules/helpers.js');
 
 },{"./modules/helpers.js":2}],2:[function(require,module,exports){
-let helper;
+/**
+ * @class
+ * @desc Set of static methods, that are used to display all HTML and CSS (i.e. to make interactive mockup).
+ * Once we have some framework here, then this class is likely to be removed.
+ */
+class Helpers {
+  constructor() {}
 
-class Helper {
-  constructor() {
-    let self = this;
+  // Static methods
 
-    console.log('Instantiating Helper ...');
-    self._initButtons();
-    self._initSlider();
-  }
-
-  // Public methods
-
-  buy() {
-    let self = this;
+  static buy() {
     // IE 9+ solution, older ones not being supported (we'll have to make a workaround
     // with splitting className and joining it back)
     document.querySelector('.buy-modal').classList.toggle('not-displayed');
-    self._blur();
+    Helpers.blur();
   }
 
-  edit() {
-    let self = this;
+  static edit() {
     document.querySelector('.edit-modal').classList.toggle('not-displayed');
-    self._blur();
+    Helpers.blur();
   }
 
-  delete() {
-    let self = this;
+  static delete() {
     document.querySelector('.delete-modal').classList.toggle('not-displayed');
-    self._blur();
+    Helpers.blur();
   }
 
-  closeModal() {
-    let self = this;
+  static closeModal() {
     document.querySelectorAll('.modal-container').forEach(item => {
       item.classList.add('not-displayed');
     });
-    self._blur();
+    Helpers.blur();
+  }
+
+  static blur() {
+    document.querySelector('body').classList.toggle('has-modal-active');
   }
 
   // Private methods
 
-  _blur() {
-    document.querySelector('body').classList.toggle('has-modal-active');
-  }
-
-  _initButtons() {
-    let self = this;
-
-    if (!!document.querySelector('.buy-button')) {
-      document.querySelector('.buy-button').addEventListener('click', event => {
-        self.buy();
-      });
-    }
-
-    if (!!document.querySelector('.edit-button')) {
-      document.querySelector('.edit-button').addEventListener('click', event => {
-        self.edit();
-      });
-    }
-
-    if (!!document.querySelector('.delete-button')) {
-      document.querySelector('.delete-button').addEventListener('click', event => {
-        self.delete();
-      });
-    }
-  }
-
-  _initSlider() {
-    let self = this;
-
+  static initSlider() {
     // Slider is made of jQuery UI slider, so binding is made this way
     if (document.querySelector('.filter-options .slider')) {
       document.querySelectorAll('.filter-options .slider').forEach(obj => {
@@ -103,14 +72,19 @@ class Helper {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Do nothing, if we are already done
-  if (window.helper) {
+  if (window.Helpers) {
     return;
   }
 
   // Pulling it to global scope for now, as soon as we'll remove it once framework is here
-  window.helper = new Helper();
+  window.Helpers = Helpers;
+
+  // Now - init the slider
+  Helpers.initSlider();
 });
 
-module.exports = { Helper, helper };
+module.exports = {
+  Helpers
+};
 
 },{}]},{},[1]);
