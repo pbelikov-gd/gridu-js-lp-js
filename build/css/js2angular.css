@@ -1397,3 +1397,20 @@ div.not-displayed.modal-container {
     padding-right: 5px;
   }
 }
+
+.image-zoom {
+  border: 1px solid red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  cursor: move;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.image-zoom--visible {
+  display: block;
+}

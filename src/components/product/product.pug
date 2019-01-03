@@ -14,7 +14,7 @@ mixin product(options, isAdmin)
   div.product
     div.product-card
       div.card-image
-        img.card-image__image-content(src=productImage)
+        img.card-image__image-content(src=productImage,data-image=productImage)#TODOImage
         +rating(ratingValue, 'card-rating')
       div.card-body
         div.about

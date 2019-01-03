@@ -1,3 +1,5 @@
+const Zoom = require('./zoom');
+
 /**
  * @class
  * @desc Set of static methods, that are used to display all HTML and CSS (i.e. to make interactive mockup).
@@ -66,6 +68,12 @@ class Helpers {
       });
     }
   }
+
+  static initZoom() {
+    document.querySelectorAll('.card-image > .card-image__image-content').forEach(img => {
+      new Zoom(img);
+    })
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -79,6 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Now - init the slider
   Helpers.initSlider();
+
+  // Now - lets make it zoom
+  Helpers.initZoom();
 });
 
 module.exports = {
